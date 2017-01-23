@@ -1,0 +1,23 @@
+def check_sudoku(n):
+    size = len(n)
+    check = 1
+    while check <= size:
+        r = 0 #row
+        while r < size:
+            rcheck = 0
+            ccheck = 0
+            c = 0#column
+            while c < size:
+                if n[r][c] == check:
+                    rcheck = rcheck + 1
+                if n[c][r] == check:
+                    ccheck = ccheck + 1
+                c = c + 1
+            if rcheck != 1 or ccheck != 1:
+                return False
+            r = r + 1
+        check = check + 1
+    return True
+
+
+print check_sudoku(correct)
