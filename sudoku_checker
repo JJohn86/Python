@@ -1,3 +1,6 @@
+#this program will allow a user to enter a square grid sudoku puzzle and check to see if the answer is right
+
+
 def check_sudoku(n):
     size = len(n)
     check = 1
@@ -6,7 +9,7 @@ def check_sudoku(n):
         while r < size:
             rcheck = 0
             ccheck = 0
-            c = 0#column
+            c = 0 #column
             while c < size:
                 if n[r][c] == check:
                     rcheck = rcheck + 1
