@@ -1,23 +1,14 @@
+# hangman game where a list of words imported from
+# a txt file, list.txt, seperated by line breaks
+# and you have to guess the word within 7 tries
+
 
 import os
 import random
 import sys
 
-words = [
-    'apple',
-    'banana',
-    'orange',
-    'coconut',
-    'strawberry',
-    'lime',
-    'grapefruit',
-    'kumquat',
-    'blueberry',
-    'melon',
-    'pineapple',
-    'lemon',
-    'date'
-]
+file = open("list.txt", "r")
+words = (file.read()).split()
 
 def clear():
     if os.name =='nt':
@@ -61,6 +52,7 @@ def play(done):
     secret_word = random.choice(words)
     bad_guesses = []
     good_guesses = []
+
 
     while True:
         draw(bad_guesses, good_guesses, secret_word)
